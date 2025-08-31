@@ -1,0 +1,13 @@
+wget http://20.127.124.114:8080/jnlpJars/jenkins-cli.jar
+
+java -jar jenkins-cli.jar -s http://20.127.124.114:8080/ -webSocket help
+
+java -jar jenkins-cli.jar -s http://20.127.124.114:8080/ -auth mike:<token
+
+java -jar jenkins-cli.jar -s http://20.127.124.114:8080/ -auth mike:11f2ac3217dc7c01abe3a9d3c4bababe5d -webSocket list-jobs>
+
+java -jar jenkins-cli.jar -s http://20.127.124.114:8080/ -auth mike:11f2ac3217dc7c01abe3a9d3c4bababe5d -webSocket build test2
+
+curl -Lv http://localhost:8085/login 2>&1 | grep -i 'x-ssh-endpoint'
+
+ssh -i /home/mike/.ssh/jenkins_key -l mike -p 8022 jenkins-server help
