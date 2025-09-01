@@ -1,0 +1,10 @@
+agent setup - https://learn.kodekloud.com/user/courses/jenkins/module/1abff4aa-214c-48a2-98f1-2188e2e446bd/lesson/274b4587-e0a1-4425-ae4e-8ce8948b1a8b
+sudo adduser newuser
+sudo usermod -aG sudo newuser
+groups newuser
+
+container agent
+
+agent {
+docker { image 'golang:latest' }
+}

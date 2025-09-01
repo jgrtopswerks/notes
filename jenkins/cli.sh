@@ -11,3 +11,9 @@ java -jar jenkins-cli.jar -s http://20.127.124.114:8080/ -auth mike:11f2ac3217dc
 curl -Lv http://localhost:8085/login 2>&1 | grep -i 'x-ssh-endpoint'
 
 ssh -i /home/mike/.ssh/jenkins_key -l mike -p 8022 jenkins-server help
+
+java -jar jenkins-cli.jar -s http://localhost:8085 -auth 'admin:Adm!n321' install-plugin cloudbees-bitbucket-branch-source
+
+java -jar jenkins-cli.jar -s http://localhost:8085 -auth 'admin:Adm!n321' install-plugin cloud-stats
+
+java -jar jenkins-cli.jar -s http://localhost:8085 -auth 'admin:Adm!n321' disable-plugin github -restart -r
