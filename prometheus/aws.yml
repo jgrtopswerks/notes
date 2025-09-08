@@ -1,0 +1,7 @@
+scrape_configs:
+  - job_name: EC2
+    ec2_sd_configs:
+      - region: <region>
+        access_key: <access key>
+        secret_key: <secret key>
+

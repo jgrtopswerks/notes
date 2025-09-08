@@ -1,0 +1,21 @@
+groups:
+  - name: example1
+    interval: 15s
+    rules:
+      - record: node_filesystem_free_percent
+        expr: 100 * node_filesystem_free_bytes{job="node"} / node_filesystem_size_bytes{job="node"}
+      - record: node_filesystem_free_percent_avg
+        expr: avg by(instance)(node_filesystem_free_percent)
+
+
+
+#prometeus.yml
+
+# Load rule files
+rule_files:
+  - rules.yaml
+
+cd /etc/prometheus/
+sudo vi rules.yaml
+sudo vi prometheus.yml
+sudo systemctl restart prometheus
